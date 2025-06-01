@@ -7,12 +7,13 @@ import "swiper/css/pagination";
 import { Link } from "react-router-dom";
 import useEntertainmentData from "../../Hooks/EntertainmentHook/useEntertainmentData";
 import { CiBookmarkCheck } from "react-icons/ci";
-
 import { motion } from "framer-motion";
 import { IoPlayCircleSharp } from "react-icons/io5";
 import { MdAccessTimeFilled, MdCategory } from "react-icons/md";
 
 import { TbCategory } from "react-icons/tb";
+
+
 
 // const slides = [
 //   {
