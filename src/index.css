@@ -1,2 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @import "tailwindcss";
 @plugin "daisyui";
+
+@theme {
+    --color-main: #53b17a;
+    --color-supporting: #F88922;
+    --color-button: #69C045;
+    --color-background: #F9FAFB;
+
+    /* For Dark Theme */
+    --color-dark-supporting: #BD5D1A; /* For Supporting Text */
+    --color-dark-background: #121212; /* For Main Background*/
+    --color-dark-surface: #2A2A2A ; /* Cards, Modals, Containers */
+    --color-dark-accent: #53B17A; /* Buttons, highlights */
+    --color-dark-primary: #B0B0B0; /* Heading, Important Text */
+    --color-dark-secondary: #A0A0A0; /* Secondary text, labels */
+    --color-dark-border: #2D2D2D; /* Dividers, card borders */
+    
+    --font-roboto: "roboto", "sans-serif"; /* Fonts */
+}
+
+/* Reusable button class */
+.ezy-button-primary {
+    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-main hover:bg-green-700 focus:outline-none hover:scale-95 transform transition-all duration-300 cursor-pointer;
+}
+.ezy-button-secondary {
+    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-supporting hover:bg-amber-700 focus:outline-none hover:scale-95 transform transition-all duration-300 cursor-pointer;
+}
+
+.ezy-button-primary-sm {
+    @apply inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-main hover:bg-green-700 focus:outline-none hover:scale-95 transform transition-all duration-300 cursor-pointer
+}
+.ezy-button-secondary-sm {
+    @apply inline-flex items-center px-3 py-1 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-supporting hover:bg-amber-700 focus:outline-none hover:scale-95 transform transition-all duration-300 cursor-pointer
+}
+
+.dashboard-badge {
+    @apply font-semibold text-sm py-1 px-3 border border-gray-200 w-fit mx-auto my-2 rounded-md bg-orange-200
+}
+
+.clip-diagonal-reverse {
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  
+  

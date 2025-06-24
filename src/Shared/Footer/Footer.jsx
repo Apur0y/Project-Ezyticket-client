@@ -1,88 +1,84 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { IoMdMail } from "react-icons/io";
+import { FaPhone, FaLocationDot } from "react-icons/fa6";
+import useAuth from "../../Hooks/useAuth";
 
 const Footer = () => {
+  const { darkMode } = useAuth();
 
-    const navLinks = [
-        {
-            name: "Home",
-            link: "/"
-        },
-        {
-            name: "Gallery",
-            link: "/gallery"
-        },
-        {
-            name: "About Us",
-            link: "/about"
-        },
-        {
-            name: "Contact",
-            link: "/contact"
-        },
-        {
-            name: "Blog",
-            link: "/blog"
-        },
-    ]
+  return (
+    <footer className={`w-full bg-[#1b1b1b] text-white pt-10`}>
+      {/* Subscription Section */}
+      <div className="w-full flex justify-center px-4">
+        <div className="w-full max-w-5xl bg-white rounded-lg p-6 shadow-lg flex flex-col md:flex-row items-center gap-4">
+          <h2 className="text-lg font-semibold text-gray-800">Subscribe to our news</h2>
+          <div className="flex flex-1 w-full md:w-auto gap-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 text-gray-700 px-4 py-2 rounded-md border border-gray-300 focus:outline-none"
+            />
+            <button className="ezy-button-primary-sm">Subscribe</button>
+          </div>
+        </div>
+      </div>
 
-    const partUsLinks = [
-        {
-            name: "Create Event",
-            path: "/event-create"
-        },
-        {
-            name: "Your Event",
-            path: "/your-event"
-        },
-        {
-            name: "Ticket Event",
-            path: "/ticket-event"
-        },
-        
-    ]
-
-
-
-
-    return (
-        <footer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-20 lg:gap-5 bg-[#1b1b1b] text-white py-16 px-5">
-            {/* about us */}
-            <div className="flex flex-col ">
-                <h1 className="text-2xl font-semibold mb-3">About Us</h1>
-                <p className="text-left">Welcome to [Your Website Name], your trusted online ticket booking platform. We make ticket purchasing fast, secure, and hassle-free for events, travel, and entertainment. Our user-friendly system ensures seamless booking, real-time availability, and secure payments. Whether you're planning a trip, attending a concert, or booking a sports event, we've got you covered. Enjoy a smooth and convenient ticketing experience with us!</p>
+      {/* Navigation Section */}
+      <div className="w-full flex justify-center px-4 mt-12">
+        <div className="w-full max-w-6xl flex flex-wrap justify-between gap-10 text-sm">
+          {/* Brand & Social */}
+          <div className="flex flex-col gap-4 min-w-[220px]">
+            <h4 className="text-xl font-bold">EZY Ticket</h4>
+            <p className="t0">
+              Book smarter, travel easier, and explore unforgettable experiences.
+            </p>
+            <div className="flex gap-4 text-xl">
+              <Link className="text-main hover:scale-110 transition-transform"><FaFacebookF /></Link>
+              <Link className="text-main hover:scale-110 transition-transform"><FaTwitter /></Link>
+              <Link className="text-main hover:scale-110 transition-transform"><FaInstagram /></Link>
+              <Link className="text-main hover:scale-110 transition-transform"><FaLinkedinIn /></Link>
             </div>
-            {/* nav links */}
-            <div className="flex flex-col  lg:pl-10">
-                <h1 className="text-2xl font-semibold mb-3">Quick Links</h1>
-                <div>
-                    <ul className="flex flex-col justify-center  gap-4">
-                        {
-                            navLinks.map((i, idx) => <li><Link to={i.path}>{i.name}</Link></li>)
-                        }
-                    </ul>
-                </div>
-            </div>
-            {/* Be Part of Us */}
-            <div className="flex flex-col ">
-                <h1 className="text-2xl font-semibold mb-3">Be Part Of Us</h1>
-                <ul className="flex flex-col justify-center  gap-4">
-                    {
-                        partUsLinks.map((i, idx) => <li><Link to={i.path}>{i.name}</Link></li>)
-                    }
-                </ul>
-            </div>
-            {/* Contact us */}
-            <div className="flex flex-col ">
-                <h1 className="text-2xl font-semibold mb-3">Contact Us</h1>
-                <ul className="flex flex-col justify-center  gap-4">
-                    <li><Link>Address: Dhaka,Bangladesh</Link></li>
-                    <li><Link>Email: ezy@ticket.com</Link></li>
-                    <li><Link>Email: +880 19856 458656</Link></li>
-                </ul>
-            </div>
+          </div>
 
-        </footer>
-    )
-}
+          {/* Resources */}
+          <div className="flex flex-col gap-2 min-w-[150px]">
+            <h4 className="font-semibold text-white mb-2">RESOURCES</h4>
+            <Link to="/application">Application</Link>
+            <Link to="/documentation">Documentation</Link>
+            <Link to="/systems">Systems</Link>
+            <Link to="/faq">FAQ</Link>
+          </div>
 
-export default Footer
+          {/* Pricing */}
+          
+
+          {/* Company */}
+          <div className="flex flex-col gap-2 min-w-[150px]">
+            <h4 className="font-semibold text-white mb-2">COMPANY</h4>
+            <Link to="/about">About Us</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/partnerships">Partnerships</Link>
+            <Link to="/careers">Careers</Link>
+            <Link to="/press">Press</Link>
+          </div>
+
+          {/* Contact */}
+          <div className="flex flex-col gap-3 min-w-[200px]">
+            <h4 className="font-semibold text-white mb-2">CONTACT</h4>
+            <div className="flex items-center gap-2"><FaLocationDot className="text-main" /> Dhaka, Bangladesh</div>
+            <div className="flex items-center gap-2"><IoMdMail className="text-main" /> support@ezyticket.com</div>
+            <div className="flex items-center gap-2"><FaPhone className="text-main" /> +880 19856 458656</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom */}
+      <div className="w-full text-center text-sm text-gray-400 mt-12 py-6 border-t border-gray-700">
+        &copy; {new Date().getFullYear()} EZY Ticket. All rights reserved.
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

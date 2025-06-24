@@ -1,0 +1,18 @@
+/* Add this to your CSS file or in a <style> tag */
+@keyframes wave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  .water-bg {
+    background: linear-gradient(135deg, #3b82f6 30%, #60a5fa 70%);
+    background-size: 400% 400%;
+    animation: wave 6s ease-in-out infinite;
+    opacity: 0.3;
+    position: absolute;
+    inset: 0;
+    border-radius: 0.5rem;
+    z-index: -1;
+  }
+  
