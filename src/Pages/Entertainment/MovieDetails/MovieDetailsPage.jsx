@@ -202,7 +202,7 @@ const MovieDetailsPage = () => {
       <div className="mt-80 pt-30 md:pt-1">
         <h1 className="text-5xl font-extrabold text-center  mx-15 rounded-2xl">
           {" "}
-          Your Showtimes
+          
         </h1>
       </div>
 

@@ -10,9 +10,9 @@ import TrendingMovies from "./TrendingMovies";
 const Entertainment = () => {
 
 
-
+console.log("Entermain ghete");
   return ( 
-    <div className={`  `}>
+    <div >
       <MovieHero></MovieHero>
       <AllMovies></AllMovies>
       {/* <TrendingMovies></TrendingMovies> */}

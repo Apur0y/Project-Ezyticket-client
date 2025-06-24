@@ -97,7 +97,7 @@ const AuthProvider = ({ children }) => {
     queryFn: async () => {
       setUserInfoLoading(true);
       if (!user?.email) return null;
-      const res = await axiosSecure.get(`/users/${user.email}`);
+      const res = await axiosSecure.get(`/users/${user?.email}`);
       setUserInfo(res.data[0]);
       setUserInfoLoading(false);
       return res.data[0];
